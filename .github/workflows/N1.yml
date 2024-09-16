@@ -61,6 +61,7 @@ jobs:
       working-directory: ./openwrt
       run: |
         ./scripts/feeds update -a
+        rm -rf feeds/small/{luci-app-mosdns,mosdns,luci-app-passwall}
         ./scripts/feeds install -a
 
     - name: Load custom config
